@@ -2,10 +2,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body {
-    font-family: "F37 Fudge";
+    cursor: none;
+    font-family: "Poppins", sans-serif;
+}
+
+#custom-cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-image: url('./assets/cursor-default.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s linear;
+}
+
+.hover-effect {
+    background-image: url('./assets/cursor-pointer.svg') !important;
 }
 
 img {
@@ -23,8 +42,8 @@ section {
 
 h1 {
     text-transform: uppercase;
-    font-size: 4vw;
-    font-weight: 500;
+    font-size: 9vw;
+    font-weight: 700;
     color: #1f1f1f;
 }
 
@@ -36,6 +55,68 @@ h1 {
     background-color: #edebde;
 }
 
-.stricky {
+.sticky {
     background-color: #fffef8;
+}
+
+.titles {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 400vw;
+    height: 100vh;
+    display: flex;
+    will-change: transform;
+}
+
+.title {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 9vw;
+    font-style: italic;
+    will-change: transform;
+}
+
+h1.title-1 {
+    color: #dafa6c;
+}
+
+h1.title-2 {
+    color: #10d0f4;
+}
+
+h1.title-3 {
+    color: #1f1f1f;
+}
+
+.images {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250vw;
+    height: 250vh;
+    transform-style: preserve-3d;
+    perspective: 2000px;
+    z-index: -1;
+}
+
+.card {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 2em;
+    transform-style: preserve-3d;
+    will-change: transform;
+    overflow: hidden;
 }
